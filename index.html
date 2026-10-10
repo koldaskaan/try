@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Melisa Özübek - Yeni Medya Dersi Ödev Web Sitesi">
+    <title>Melisa Özübek | Yeni Medya Dersi</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ÜST MENÜ / NAVBAR -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="brand-logo">
+                <span class="logo-badge">MÖ</span>
+                <div class="brand-text-group">
+                    <span class="logo-text">Melisa Özübek</span>
+                    <span class="logo-subtext">Yeni Medya Dersi</span>
+                </div>
+            </a>
+
+            <!-- Mobil Menü Butonu (Hamburger) -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Menüyü Aç/Kapat">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Navigasyon Linkleri -->
+            <nav class="nav-menu" id="navMenu">
+                <a href="#giris" class="nav-link active">Ana Sayfa</a>
+                <a href="#konu-1" class="nav-link">Bölüm 1</a>
+                <a href="#konu-2" class="nav-link">Bölüm 2</a>
+                <a href="#galeri" class="nav-link">Görseller</a>
+                <a href="#gunluk" class="nav-link">📖 Melisa'nın Günlüğü</a>
+                <a href="#zahidebird" class="nav-link game-highlight">🎮 ZahideBird</a>
+                <a href="#kunye" class="nav-link">Künye</a>
+                <a href="#kunye" class="nav-btn">İletişim</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- KARŞILAMA / HERO BÖLÜMÜ (BOŞ ŞABLON) -->
+    <section class="hero-section" id="giris">
+        <div class="container hero-content">
+            <div class="hero-badge">Yeni Medya Dersi Ödev Şablonu</div>
+            <h1 class="hero-title">
+                <span class="gradient-text">Ödev / Proje Başlığı</span> Buraya Gelecek
+            </h1>
+            <p class="hero-description">
+                Bu alana projenizin veya ödevinizin genel özetini, konusunu ve amacını kısaca yazabilirsiniz.
+            </p>
+            <div class="hero-actions">
+                <a href="#konu-1" class="btn btn-primary">İçeriğe Başla</a>
+                <a href="#kunye" class="btn btn-secondary">Proje Bilgileri</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BÖLÜM 1: KARTLI İÇERİK ALANI (BOŞ ŞABLON) -->
+    <section class="info-section" id="konu-1">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">1. BÖLÜM</span>
+                <h2 class="section-title">Ana Başlık Buraya</h2>
+                <div class="title-underline"></div>
+                <p class="section-subtitle">
+                    Bu alana konunuzun giriş kısmını veya genel açıklamasını ekleyebilirsiniz.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Kart 1 -->
+                <div class="feature-card">
+                    <div class="icon-circle">01</div>
+                    <h3>Alt Başlık 1</h3>
+                    <p>Bu alana 1. konu veya alt başlıkla ilgili açıklama metninizi yazabilirsiniz.</p>
+                </div>
+
+                <!-- Kart 2 (Vurgulu Kart) -->
+                <div class="feature-card highlighted">
+                    <div class="icon-circle">02</div>
+                    <h3>Alt Başlık 2</h3>
+                    <p>Bu alana 2. konu veya önemli gördüğünüz içerik metninizi ekleyebilirsiniz.</p>
+                </div>
+
+                <!-- Kart 3 -->
+                <div class="feature-card">
+                    <div class="icon-circle">03</div>
+                    <h3>Alt Başlık 3</h3>
+                    <p>Bu alana 3. konu veya özetlemek istediğiniz bilgileri yazabilirsiniz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BÖLÜM 2: DETAYLI YAZI & GÖRSEL ALANI -->
+    <section class="topics-section" id="konu-2">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">2. BÖLÜM</span>
+                <h2 class="section-title">Detaylı İçerik Başlığı</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="content-split-layout">
+                <div class="placeholder-media-box">
+                    <div class="media-icon">📷</div>
+                    <h4>Görsel / Video Alanı</h4>
+                    <p>Buraya bir fotoğraf veya video ekleyebilirsiniz.</p>
+                </div>
+                <div class="split-text-box">
+                    <h3>Konu Başlığı</h3>
+                    <p>
+                        Bu alana uzun metinlerinizi, araştırmanızı, hocanın istediği makale veya inceleme yazılarını
+                        paragraf olarak ekleyebilirsiniz.
+                    </p>
+                    <p>
+                        İkinci paragraf metni buraya gelecektir. İstediğiniz kadar paragraf veya madde imi
+                        ekleyebilirsiniz.
+                    </p>
+                    <div class="bullet-list-example">
+                        <div class="bullet-item">• Önemli Madde 1</div>
+                        <div class="bullet-item">• Önemli Madde 2</div>
+                        <div class="bullet-item">• Önemli Madde 3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BÖLÜM 3: GÖRSEL / ÇALIŞMALAR ALANI (GALERİ ŞABLONU) -->
+    <section class="gallery-section" id="galeri">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">GÖRSELLER</span>
+                <h2 class="section-title">Çalışma ve Örnekler</h2>
+                <div class="title-underline"></div>
+                <p class="section-subtitle">Fotoğraf veya grafik çalışmaları için boş alanlar:</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-placeholder">
+                    <span class="photo-icon">🖼️</span>
+                    <p>Görsel Alanı 1</p>
+                    <small>Açıklama metni</small>
+                </div>
+                <div class="gallery-placeholder">
+                    <span class="photo-icon">🖼️</span>
+                    <p>Görsel Alanı 2</p>
+                    <small>Açıklama metni</small>
+                </div>
+                <div class="gallery-placeholder">
+                    <span class="photo-icon">🖼️</span>
+                    <p>Görsel Alanı 3</p>
+                    <small>Açıklama metni</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BÖLÜM: MELİSA'NIN GÜNLÜĞÜ -->
+    <section class="diary-section" id="gunluk">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">ÖZEL BÖLÜM</span>
+                <h2 class="section-title">📖 Melisa'nın Günlüğü</h2>
+                <div class="title-underline"></div>
+                <p class="section-subtitle">Ders süreci, düşünceler, projeler ve günün notları</p>
+            </div>
+
+            <div class="diary-container">
+                <!-- Yeni Günlük Notu Ekleme Formu -->
+                <div class="diary-form-card">
+                    <h3>✍️ Yeni Günlük Girişi</h3>
+                    <div class="form-row">
+                        <input type="text" id="diaryTitleInput" placeholder="Günün Başlığı (Örn: Projeye Başladım...)"
+                            class="diary-input">
+                        <select id="diaryMoodInput" class="diary-select">
+                            <option value="✨">Ruh Hali: İlham Dolu ✨</option>
+                            <option value="💡">Ruh Hali: Fikir Buldum 💡</option>
+                            <option value="☕">Ruh Hali: Çalışma Modu ☕</option>
+                            <option value="🎉">Ruh Hali: Mutlu / Başarılı 🎉</option>
+                            <option value="😴">Ruh Hali: Yorucu Bir Gün 😴</option>
+                        </select>
+                    </div>
+                    <textarea id="diaryContentInput" placeholder="Bugün neler oldu? Neler öğrendin veya düşündün..."
+                        class="diary-textarea" rows="4"></textarea>
+                    <div class="form-actions">
+                        <button id="addDiaryBtn" class="btn btn-primary">Günlüğe Kaydet</button>
+                    </div>
+                </div>
+
+                <!-- Günlük Notları Listesi -->
+                <div class="diary-entries-list" id="diaryEntriesList">
+                    <!-- Giriş 1 -->
+                    <article class="diary-entry-card">
+                        <div class="entry-header">
+                            <div class="entry-meta">
+                                <span class="entry-date">📅 11 Ekim 2026</span>
+                                <span class="entry-mood">✨ İlham Dolu</span>
+                            </div>
+                            <h4 class="entry-title">Yeni Medya Dersi Web Sitemizi Kurduk!</h4>
+                        </div>
+                        <div class="entry-body">
+                            <p>Bugün web tasarım ödevime başladım. Sayfam için şık bir lacivert-bordo renk paleti
+                                seçtik. Hatta sitemize ZahideBird adında eğlenceli bir Flappy Bird oyunu bile ekledik.
+                                Yeni medya araçlarını keşfetmek gerçekten çok keyifli!</p>
+                        </div>
+                    </article>
+
+                    <!-- Giriş 2 (Şablon) -->
+                    <article class="diary-entry-card">
+                        <div class="entry-header">
+                            <div class="entry-meta">
+                                <span class="entry-date">📅 08 Ekim 2026</span>
+                                <span class="entry-mood">💡 Fikir Buldum</span>
+                            </div>
+                            <h4 class="entry-title">Ders Notları ve İlk Araştırmalar</h4>
+                        </div>
+                        <div class="entry-body">
+                            <p>Geleneksel medyanın yerini nasıl dijital mecralara bıraktığını tartıştık. İnternetin hızı
+                                ve etkileşim olanakları iletişim dünyasını baştan aşağı değiştirmiş durumda. Bu konu
+                                hakkında detaylı bir araştırma yazısı hazırlayacağım.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BÖLÜM 4: ZAHİDEBIRD OYUNU -->
+    <section class="game-section" id="zahidebird">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">İNTERAKTİF MEDYA & OYUN</span>
+                <h2 class="section-title">🎮 ZahideBird Demo</h2>
+                <div class="title-underline"></div>
+                <p class="section-subtitle">Yeni medya dersi dijital etkileşim projesi: Zıplamak için boşluk tuşuna
+                    (Space) veya ekrana dokunun!</p>
+            </div>
+
+            <div class="game-wrapper">
+                <div class="game-scoreboard">
+                    <div class="score-box">Skor: <span id="currentScore">0</span></div>
+                    <div class="score-box high-score">En Yüksek: <span id="highScore">0</span></div>
+                </div>
+
+                <!-- Kuş Resmi Seçme / Yükleme Alanı -->
+                <div class="custom-bird-controls">
+                    <label class="custom-upload-btn" for="birdImageInput">
+                        📸 Kendi Resmini Yükle (Zahide'nin Fotoğrafı vb.)
+                    </label>
+                    <input type="file" id="birdImageInput" accept="image/*" style="display: none;">
+                    <button id="resetBirdImgBtn" class="btn-subtle" title="Varsayılan karaktere dön">Varsayılan Kuşa
+                        Dön</button>
+                </div>
+
+                <div class="canvas-container">
+                    <canvas id="birdCanvas" width="560" height="650"></canvas>
+                    <div id="gameOverlay" class="game-overlay">
+                        <div class="overlay-content">
+                            <h3 id="overlayTitle">ZahideBird 🐦</h3>
+                            <p id="overlayDesc">Uçmak için Boşluk (Space) tuşuna bas veya tıkla!</p>
+                            <button id="startGameBtn" class="btn btn-primary">Oyunu Başlat</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÖĞRENCİ VE PROJE KÜNYESİ -->
+    <section class="profile-section" id="kunye">
+        <div class="container">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <h2>Öğrenci & Proje Künyesi</h2>
+                    <p>Yeni Medya Dersi Performans / Dönem Ödevi</p>
+                </div>
+                <div class="profile-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Öğrenci Adı Soyadı:</span>
+                        <span class="detail-value">Melisa Özübek</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Okul / Sınıf:</span>
+                        <span class="detail-value">[Okul Adı / Sınıf Şube]</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Ders:</span>
+                        <span class="detail-value">Yeni Medya</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Öğretmen:</span>
+                        <span class="detail-value">[Öğretmeninizin Adı]</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALT BİLGİ (FOOTER) -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="logo-box">
+                    <span class="logo-badge">MÖ</span>
+                    <span class="logo-text light">Melisa Özübek</span>
+                </div>
+                <p>Yeni Medya Dersi Proje Ödevi Web Sayfası.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Sayfa Menüsü</h4>
+                <ul>
+                    <li><a href="#giris">Ana Sayfa</a></li>
+                    <li><a href="#konu-1">Bölüm 1</a></li>
+                    <li><a href="#konu-2">Bölüm 2</a></li>
+                    <li><a href="#galeri">Görseller</a></li>
+                    <li><a href="#gunluk">Melisa'nın Günlüğü</a></li>
+                    <li><a href="#zahidebird">ZahideBird Oyunu</a></li>
+                    <li><a href="#kunye">Künye</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container bottom-content">
+                <p>&copy; 2026 Melisa Özübek - Yeni Medya Dersi Ödevi</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

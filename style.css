@@ -1,0 +1,996 @@
+/* ===================================================
+   YENİ MEDYA DERSİ WEB ŞABLONU - STİL DOSYASI
+   Öğrenci: Melisa Özübek
+   Ana Renk Paleti: Lacivert & Bordo
+   =================================================== */
+
+:root {
+    /* Renk Paleti (Lacivert & Bordo Ağırlıklı) */
+    --color-navy-dark: #0a1128;      /* Derin Gece Laciverti */
+    --color-navy-primary: #12234e;   /* Ana Lacivert */
+    --color-navy-light: #1c3575;     /* Vurgulu Açık Lacivert */
+    --color-bordo-primary: #7b1129;  /* Ana Bordo */
+    --color-bordo-hover: #9c1534;    /* Canlı Bordo (Hover durumları) */
+    --color-bordo-soft: #fcf1f3;     /* Bordo açık zemin tonu */
+
+    /* Nötr & Arka Plan Renkleri */
+    --color-bg-light: #f8fafc;
+    --color-bg-card: #ffffff;
+    --color-text-main: #1e293b;
+    --color-text-muted: #64748b;
+    --color-border: #e2e8f0;
+
+    /* Tasarım Standartları */
+    --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --border-radius-sm: 8px;
+    --border-radius-md: 14px;
+    --border-radius-lg: 20px;
+    --shadow-soft: 0 4px 20px rgba(10, 17, 40, 0.06);
+    --shadow-hover: 0 10px 25px rgba(123, 17, 41, 0.12);
+    --transition: all 0.3s ease;
+}
+
+/* Temel Sıfırlamalar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg-light);
+    color: var(--color-text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/* ===================================================
+   ÜST MENÜ (NAVBAR)
+   =================================================== */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+    transition: var(--transition);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.9rem 0;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    text-decoration: none;
+}
+
+.logo-badge {
+    background: linear-gradient(135deg, var(--color-navy-primary), var(--color-bordo-primary));
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.05rem;
+    padding: 0.45rem 0.75rem;
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 3px 10px rgba(18, 35, 78, 0.25);
+    letter-spacing: 0.5px;
+}
+
+.brand-text-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--color-navy-primary);
+    letter-spacing: -0.3px;
+    line-height: 1.15;
+}
+
+.logo-subtext {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-bordo-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.logo-text.light {
+    color: #ffffff;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--color-text-main);
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+    padding: 0.25rem 0;
+    transition: var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--color-bordo-primary);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--color-bordo-primary);
+    transition: var(--transition);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link.game-highlight {
+    color: var(--color-bordo-primary);
+    font-weight: 700;
+}
+
+.nav-link.game-highlight:hover {
+    color: var(--color-bordo-hover);
+}
+
+.nav-btn {
+    text-decoration: none;
+    background-color: var(--color-navy-primary);
+    color: #ffffff;
+    padding: 0.55rem 1.25rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.nav-btn:hover {
+    background-color: var(--color-bordo-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(123, 17, 41, 0.25);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-navy-primary);
+    border-radius: 3px;
+    transition: var(--transition);
+}
+
+/* ===================================================
+   HERO (KARŞILAMA ALANI)
+   =================================================== */
+.hero-section {
+    position: relative;
+    padding: 5.5rem 0 4.5rem;
+    background: linear-gradient(145deg, #0a1128 0%, #15254f 60%, #4a0d1e 100%);
+    color: #ffffff;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -15%;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(123, 17, 41, 0.35) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+}
+
+.hero-badge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(6px);
+    color: #fce7eb;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.hero-title {
+    font-size: 2.75rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.5px;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #ffffff, #ffccd5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    margin-bottom: 2.2rem;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--color-bordo-primary);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(123, 17, 41, 0.4);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-bordo-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(123, 17, 41, 0.5);
+}
+
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.22);
+    transform: translateY(-2px);
+}
+
+/* ===================================================
+   BÖLÜM BAŞLIKLARI
+   =================================================== */
+section {
+    padding: 4.5rem 0;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 3rem;
+}
+
+.section-tag {
+    display: inline-block;
+    color: var(--color-bordo-primary);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--color-navy-primary);
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.title-underline {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-navy-primary), var(--color-bordo-primary));
+    border-radius: 2px;
+    margin: 0.5rem auto 1rem;
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+}
+
+/* ===================================================
+   BÖLÜM 1: KARTLAR (ŞABLON)
+   =================================================== */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background-color: var(--color-bg-card);
+    padding: 2.25rem 1.75rem;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+    border-top: 4px solid var(--color-navy-primary);
+}
+
+.feature-card.highlighted {
+    border-top-color: var(--color-bordo-primary);
+    background: linear-gradient(180deg, var(--color-bordo-soft) 0%, #ffffff 40%);
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+}
+
+.icon-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background-color: var(--color-navy-light);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+}
+
+.feature-card.highlighted .icon-circle {
+    background-color: var(--color-bordo-primary);
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    color: var(--color-navy-primary);
+    margin-bottom: 0.75rem;
+}
+
+.feature-card p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+}
+
+/* ===================================================
+   BÖLÜM 2: YAZI VE GÖRSEL ALANI
+   =================================================== */
+.topics-section {
+    background-color: #f1f5f9;
+}
+
+.content-split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.placeholder-media-box {
+    background: #e2e8f0;
+    border: 2px dashed #94a3b8;
+    border-radius: var(--border-radius-md);
+    padding: 4rem 2rem;
+    text-align: center;
+    color: var(--color-text-muted);
+    transition: var(--transition);
+}
+
+.placeholder-media-box:hover {
+    border-color: var(--color-bordo-primary);
+    background: #f8fafc;
+}
+
+.media-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.placeholder-media-box h4 {
+    color: var(--color-navy-primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+}
+
+.split-text-box h3 {
+    font-size: 1.6rem;
+    color: var(--color-navy-primary);
+    margin-bottom: 1rem;
+}
+
+.split-text-box p {
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.bullet-list-example {
+    margin-top: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.bullet-item {
+    font-weight: 600;
+    color: var(--color-navy-primary);
+    background: #ffffff;
+    padding: 0.6rem 1rem;
+    border-radius: var(--border-radius-sm);
+    border-left: 4px solid var(--color-bordo-primary);
+}
+
+/* ===================================================
+   BÖLÜM 3: GALERİ (GÖRSEL ŞABLONLARI)
+   =================================================== */
+.gallery-section {
+    background-color: #ffffff;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-placeholder {
+    background-color: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    border-radius: var(--border-radius-md);
+    padding: 3rem 1.5rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.gallery-placeholder:hover {
+    border-color: var(--color-bordo-primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-soft);
+}
+
+.photo-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.gallery-placeholder p {
+    font-weight: 700;
+    color: var(--color-navy-primary);
+    margin-bottom: 0.25rem;
+}
+
+.gallery-placeholder small {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+}
+
+/* ===================================================
+   MELİSA'NIN GÜNLÜĞÜ BÖLÜMÜ
+   =================================================== */
+.diary-section {
+    background-color: #f8fafc;
+}
+
+.diary-container {
+    max-width: 840px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.diary-form-card {
+    background: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    padding: 2rem;
+    box-shadow: var(--shadow-soft);
+    border-top: 4px solid var(--color-bordo-primary);
+}
+
+.diary-form-card h3 {
+    color: var(--color-navy-primary);
+    font-size: 1.3rem;
+    margin-bottom: 1.25rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.diary-input,
+.diary-select,
+.diary-textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    font-family: var(--font-main);
+    font-size: 0.95rem;
+    outline: none;
+    transition: var(--transition);
+    background-color: #fdfdfd;
+}
+
+.diary-input:focus,
+.diary-select:focus,
+.diary-textarea:focus {
+    border-color: var(--color-bordo-primary);
+    box-shadow: 0 0 0 3px rgba(123, 17, 41, 0.1);
+    background-color: #ffffff;
+}
+
+.diary-textarea {
+    resize: vertical;
+    min-height: 100px;
+    margin-bottom: 1.25rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.diary-entries-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.diary-entry-card {
+    background: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    padding: 1.75rem 2rem;
+    box-shadow: var(--shadow-soft);
+    border-left: 5px solid var(--color-navy-primary);
+    transition: var(--transition);
+}
+
+.diary-entry-card:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-hover);
+    border-left-color: var(--color-bordo-primary);
+}
+
+.entry-header {
+    margin-bottom: 0.75rem;
+}
+
+.entry-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.entry-date {
+    color: var(--color-text-muted);
+}
+
+.entry-mood {
+    background-color: var(--color-bordo-soft);
+    color: var(--color-bordo-primary);
+    padding: 0.2rem 0.6rem;
+    border-radius: 50px;
+}
+
+.entry-title {
+    font-size: 1.25rem;
+    color: var(--color-navy-primary);
+    font-weight: 700;
+}
+
+.entry-body p {
+    color: #334155;
+    font-size: 0.98rem;
+    line-height: 1.65;
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===================================================
+   BÖLÜM 4: ZAHİDEBIRD OYUN ALANI
+   =================================================== */
+.game-section {
+    background: linear-gradient(180deg, #f8fafc 0%, #eef2f6 100%);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.game-wrapper {
+    max-width: 620px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    padding: 1.75rem;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 10px 30px rgba(10, 17, 40, 0.1);
+    border: 2px solid rgba(123, 17, 41, 0.15);
+}
+
+.custom-bird-controls {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.custom-upload-btn {
+    background-color: var(--color-bordo-soft);
+    color: var(--color-bordo-primary);
+    border: 1.5px dashed var(--color-bordo-primary);
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.custom-upload-btn:hover {
+    background-color: var(--color-bordo-primary);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(123, 17, 41, 0.2);
+}
+
+.btn-subtle {
+    background: none;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    padding: 0.55rem 1rem;
+    border-radius: 50px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-subtle:hover {
+    background-color: #f1f5f9;
+    color: var(--color-text-main);
+}
+
+.game-scoreboard {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.score-box {
+    flex: 1;
+    background-color: var(--color-navy-primary);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 0.6rem 1rem;
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 2px 8px rgba(18, 35, 78, 0.15);
+}
+
+.score-box.high-score {
+    background-color: var(--color-bordo-primary);
+}
+
+.score-box span {
+    font-weight: 800;
+    color: #ffd166;
+}
+
+.canvas-container {
+    position: relative;
+    width: 560px;
+    max-width: 100%;
+    height: 650px;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+    background-color: #70c5ce;
+}
+
+#birdCanvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #70c5ce;
+    cursor: pointer;
+}
+
+.game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 17, 40, 0.82);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: opacity 0.3s ease;
+}
+
+.game-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.overlay-content {
+    text-align: center;
+    color: #ffffff;
+    padding: 1.5rem;
+}
+
+.overlay-content h3 {
+    font-size: 1.8rem;
+    color: #ffd166;
+    margin-bottom: 0.5rem;
+}
+
+.overlay-content p {
+    font-size: 0.95rem;
+    color: #e2e8f0;
+    margin-bottom: 1.5rem;
+}
+
+.game-controls-hint {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    text-align: center;
+}
+
+/* ===================================================
+   ÖĞRENCİ KÜNYESİ
+   =================================================== */
+.profile-section {
+    background-color: #f1f5f9;
+}
+
+.profile-card {
+    background: linear-gradient(135deg, var(--color-navy-dark) 0%, var(--color-navy-primary) 100%);
+    color: #ffffff;
+    border-radius: var(--border-radius-lg);
+    padding: 3rem 2.5rem;
+    box-shadow: 0 10px 30px rgba(10, 17, 40, 0.15);
+    border-left: 6px solid var(--color-bordo-primary);
+}
+
+.profile-header {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 1.25rem;
+}
+
+.profile-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.35rem;
+}
+
+.profile-header p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+}
+
+.profile-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.detail-item {
+    background: rgba(255, 255, 255, 0.07);
+    padding: 1.25rem;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.detail-label {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #ffccd5;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+
+.detail-value {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* ===================================================
+   FOOTER (ALT BİLGİ)
+   =================================================== */
+.footer {
+    background-color: var(--color-navy-dark);
+    color: #cbd5e1;
+    padding: 3.5rem 0 0;
+    border-top: 3px solid var(--color-bordo-primary);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-bottom: 2.5rem;
+}
+
+.footer-brand {
+    max-width: 350px;
+}
+
+.footer-brand .logo-box {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.footer-brand p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-links h4 {
+    color: #ffffff;
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+}
+
+.footer-links ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    padding-left: 4px;
+}
+
+.footer-bottom {
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 1.25rem 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ===================================================
+   RESPONSIVE (MOBİL VE TABLET)
+   =================================================== */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #ffffff;
+        flex-direction: column;
+        padding: 1.5rem;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        display: none;
+        gap: 1rem;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .content-split-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .profile-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+}
