@@ -40,10 +40,8 @@
                 <a href="#konu-1" class="nav-link">Bölüm 1</a>
                 <a href="#konu-2" class="nav-link">Bölüm 2</a>
                 <a href="#galeri" class="nav-link">Görseller</a>
-                <a href="#gunluk" class="nav-link">📖 Melisa'nın Günlüğü</a>
-                <a href="#zahidebird" class="nav-link game-highlight">🎮 ZahideBird</a>
                 <a href="#kunye" class="nav-link">Künye</a>
-                <a href="#kunye" class="nav-btn">İletişim</a>
+                <a href="#kunye" class="nav-link nav-btn">İletişim</a>
             </nav>
         </div>
     </header>
@@ -167,116 +165,7 @@
         </div>
     </section>
 
-    <!-- BÖLÜM: MELİSA'NIN GÜNLÜĞÜ -->
-    <section class="diary-section" id="gunluk">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">ÖZEL BÖLÜM</span>
-                <h2 class="section-title">📖 Melisa'nın Günlüğü</h2>
-                <div class="title-underline"></div>
-                <p class="section-subtitle">Ders süreci, düşünceler, projeler ve günün notları</p>
-            </div>
 
-            <div class="diary-container">
-                <!-- Yeni Günlük Notu Ekleme Formu -->
-                <div class="diary-form-card">
-                    <h3>✍️ Yeni Günlük Girişi</h3>
-                    <div class="form-row">
-                        <input type="text" id="diaryTitleInput" placeholder="Günün Başlığı (Örn: Projeye Başladım...)"
-                            class="diary-input">
-                        <select id="diaryMoodInput" class="diary-select">
-                            <option value="✨">Ruh Hali: İlham Dolu ✨</option>
-                            <option value="💡">Ruh Hali: Fikir Buldum 💡</option>
-                            <option value="☕">Ruh Hali: Çalışma Modu ☕</option>
-                            <option value="🎉">Ruh Hali: Mutlu / Başarılı 🎉</option>
-                            <option value="😴">Ruh Hali: Yorucu Bir Gün 😴</option>
-                        </select>
-                    </div>
-                    <textarea id="diaryContentInput" placeholder="Bugün neler oldu? Neler öğrendin veya düşündün..."
-                        class="diary-textarea" rows="4"></textarea>
-                    <div class="form-actions">
-                        <button id="addDiaryBtn" class="btn btn-primary">Günlüğe Kaydet</button>
-                    </div>
-                </div>
-
-                <!-- Günlük Notları Listesi -->
-                <div class="diary-entries-list" id="diaryEntriesList">
-                    <!-- Giriş 1 -->
-                    <article class="diary-entry-card">
-                        <div class="entry-header">
-                            <div class="entry-meta">
-                                <span class="entry-date">📅 11 Ekim 2026</span>
-                                <span class="entry-mood">✨ İlham Dolu</span>
-                            </div>
-                            <h4 class="entry-title">Yeni Medya Dersi Web Sitemizi Kurduk!</h4>
-                        </div>
-                        <div class="entry-body">
-                            <p>Bugün web tasarım ödevime başladım. Sayfam için şık bir lacivert-bordo renk paleti
-                                seçtik. Hatta sitemize ZahideBird adında eğlenceli bir Flappy Bird oyunu bile ekledik.
-                                Yeni medya araçlarını keşfetmek gerçekten çok keyifli!</p>
-                        </div>
-                    </article>
-
-                    <!-- Giriş 2 (Şablon) -->
-                    <article class="diary-entry-card">
-                        <div class="entry-header">
-                            <div class="entry-meta">
-                                <span class="entry-date">📅 08 Ekim 2026</span>
-                                <span class="entry-mood">💡 Fikir Buldum</span>
-                            </div>
-                            <h4 class="entry-title">Ders Notları ve İlk Araştırmalar</h4>
-                        </div>
-                        <div class="entry-body">
-                            <p>Geleneksel medyanın yerini nasıl dijital mecralara bıraktığını tartıştık. İnternetin hızı
-                                ve etkileşim olanakları iletişim dünyasını baştan aşağı değiştirmiş durumda. Bu konu
-                                hakkında detaylı bir araştırma yazısı hazırlayacağım.</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- BÖLÜM 4: ZAHİDEBIRD OYUNU -->
-    <section class="game-section" id="zahidebird">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">İNTERAKTİF MEDYA & OYUN</span>
-                <h2 class="section-title">🎮 ZahideBird Demo</h2>
-                <div class="title-underline"></div>
-                <p class="section-subtitle">Yeni medya dersi dijital etkileşim projesi: Zıplamak için boşluk tuşuna
-                    (Space) veya ekrana dokunun!</p>
-            </div>
-
-            <div class="game-wrapper">
-                <div class="game-scoreboard">
-                    <div class="score-box">Skor: <span id="currentScore">0</span></div>
-                    <div class="score-box high-score">En Yüksek: <span id="highScore">0</span></div>
-                </div>
-
-                <!-- Kuş Resmi Seçme / Yükleme Alanı -->
-                <div class="custom-bird-controls">
-                    <label class="custom-upload-btn" for="birdImageInput">
-                        📸 Kendi Resmini Yükle (Zahide'nin Fotoğrafı vb.)
-                    </label>
-                    <input type="file" id="birdImageInput" accept="image/*" style="display: none;">
-                    <button id="resetBirdImgBtn" class="btn-subtle" title="Varsayılan karaktere dön">Varsayılan Kuşa
-                        Dön</button>
-                </div>
-
-                <div class="canvas-container">
-                    <canvas id="birdCanvas" width="560" height="650"></canvas>
-                    <div id="gameOverlay" class="game-overlay">
-                        <div class="overlay-content">
-                            <h3 id="overlayTitle">ZahideBird 🐦</h3>
-                            <p id="overlayDesc">Uçmak için Boşluk (Space) tuşuna bas veya tıkla!</p>
-                            <button id="startGameBtn" class="btn btn-primary">Oyunu Başlat</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- ÖĞRENCİ VE PROJE KÜNYESİ -->
     <section class="profile-section" id="kunye">
@@ -293,7 +182,7 @@
                     </div>
                     <div class="detail-item">
                         <span class="detail-label">Okul / Sınıf:</span>
-                        <span class="detail-value">[Okul Adı / Sınıf Şube]</span>
+                        <span class="detail-value">İbrahim Türhan Mesleki ve Teknik Anadolu Lisesi / 11-F</span>
                     </div>
                     <div class="detail-item">
                         <span class="detail-label">Ders:</span>
@@ -301,7 +190,7 @@
                     </div>
                     <div class="detail-item">
                         <span class="detail-label">Öğretmen:</span>
-                        <span class="detail-value">[Öğretmeninizin Adı]</span>
+                        <span class="detail-value">Sevda Yıldırım</span>
                     </div>
                 </div>
             </div>
@@ -325,8 +214,6 @@
                     <li><a href="#konu-1">Bölüm 1</a></li>
                     <li><a href="#konu-2">Bölüm 2</a></li>
                     <li><a href="#galeri">Görseller</a></li>
-                    <li><a href="#gunluk">Melisa'nın Günlüğü</a></li>
-                    <li><a href="#zahidebird">ZahideBird Oyunu</a></li>
                     <li><a href="#kunye">Künye</a></li>
                 </ul>
             </div>
